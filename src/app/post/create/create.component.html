@@ -1,0 +1,23 @@
+<div class="mx-20">
+    <h1 class="text-center text-5xl">Create New...</h1>
+    <a href="#" routeLink="/post/index" class="bg-yellow-400 p-2 text-white rounded-xl">Back</a>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="flex flex-col mt-4">
+            <label for="title">First Name:</label>
+            <input type="text" class="border-2 p-1 rounded-xl" formControlName="title" id="title"
+                placeholder="Enter First Name">
+            <div *ngIf="f['title'].touched && f['title'].invalid" class="bg-red-400 p-2 text-white">
+                <div *ngIf="f['title'].errors && f['title'].errors['required']">First Name is Required is</div>
+            </div>
+        </div>
+        <div class="flex flex-col mt-4">
+            <label for="body">Last Name:</label>
+            <input type="text" class="border-2 p-1 rounded-xl mb-2" formControlName="body" id="body"
+                placeholder="Enter Last Name">
+            <div *ngIf="f['body'].touched && f['body'].invalid" class="bg-red-400 p-2 text-white">
+                <div *ngIf="f['body'].errors && f['body'].errors['required']">Last Name is Required is</div>
+            </div>
+        </div>
+        <button class="bg-blue-400 p-2 text-white rounded-xl" type="submit" [disabled]="!form.valid">Create</button>
+    </form>
+</div>
