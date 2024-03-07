@@ -4,6 +4,7 @@ import { Post } from '../post';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-view',
   standalone: true,
@@ -14,6 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ViewComponent {
   id!: number;
   post!: Post;
+  address!: string; 
   constructor(
     public PostService: PostService,
     private router: Router,
