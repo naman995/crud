@@ -41,6 +41,7 @@ export class EditComponent {
         Validators.minLength(3),
       ]),
       body: new FormControl('', Validators.required),
+      address: new FormControl('', Validators.required),
     });
   }
 
